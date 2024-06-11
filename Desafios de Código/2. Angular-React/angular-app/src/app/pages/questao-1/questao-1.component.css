@@ -1,0 +1,26 @@
+.card {
+    background-color: #f0f0f0;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pokediv {
+    display: flex;
+    justify-content: space-evenly;
+    background: #fff;
+    border-radius: 8px;
+    width: 60%;
+    font-style: italic;
+}
+
+.return {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.return:hover {
+    color: #F6CF57;
+}

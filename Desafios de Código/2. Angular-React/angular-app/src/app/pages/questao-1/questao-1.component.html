@@ -1,0 +1,67 @@
+<div class="container mt-5">
+    <p class="position-absolute top-0 start-0 p-1">
+        <span class="return" (click)="goToHome()">
+            Início
+        </span>
+    </p>
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-7">
+            <div class="text-center mb-1">
+                <span>Cosumindo dados da api: </span> 
+                <a href="https://pokeapi.co/docs/v2#info">pokeapi.co</a>
+            </div>
+            <div class="card p-3 py-4">
+                <div class="text-center">
+                    <img [src]="pokemon?.sprites?.front_default" width="125">
+                </div>
+
+                <div class="text-center">
+                    <div>
+                        <h5 class="mt-2 mb-2">{{firstLetter(pokemon?.name)}}</h5>
+                        <p>
+                            <span
+                                class="bg-warning p-1 px-4 rounded text-black">{{firstLetter(pokemon?.types[0]?.type?.name)}}
+                            </span>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5 class="mt-2 mb-1">Habilidades</h5>
+                        <div class="container pokediv">
+                            <div *ngFor="let item of abilities">
+                                <span> {{firstLetter(item.ability.name)}} </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="mt-2 mb-1">Descrição</h5>
+                        <div class="container pokediv">
+                            <span> {{firstLetter(description)}} </span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h5 class="mt-2 mb-1">Estatísticas</h5>
+                        <table class="table" style="display: inline;">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of stats">
+                                    <th>{{firstLetter(item.stat.name)}}</th>
+                                    <td>
+                                        <b> {{item.base_stat}} </b>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
